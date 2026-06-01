@@ -14,10 +14,6 @@ A CEP panel plugin manager for Adobe Premiere Pro. Install, update, and manage p
 
 | Plugin | Description |
 |--------|-------------|
-| **FetchFlow** | Download YouTube videos and audio directly into Premiere Pro |
-| **Batch Leveler** | Automatic dialogue gain correction using FFmpeg analysis |
-| **AutoCut** | Detect and remove silence from clips automatically |
-| **SubtitleGen** | Generate subtitles from timeline audio using local Whisper model |
 | **MOLD** | Create folder templates inside Premiere Pro projects |
 
 ## Installation
@@ -72,11 +68,7 @@ Each plugin lives in its own GitHub repository under `Oxy720/`.
 
 ## Support
 
-For issues or feature requests, visit the individual plugin repositories:
-- https://github.com/Oxy720/fetchflow
-- https://github.com/Oxy720/batch-leveler
-- https://github.com/Oxy720/autocut
-- https://github.com/Oxy720/subtitle-gen
+For issues or feature requests, visit the plugin repository:
 - https://github.com/Oxy720/mold
 
 ---
