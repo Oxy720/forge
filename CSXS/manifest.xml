@@ -23,6 +23,11 @@
             <Parameter>--allow-file-access-from-files</Parameter>
             <Parameter>--enable-nodejs</Parameter>
           </CEFCommandLine>
+          <AllowedHosts>
+            <Host name="cdn.jsdelivr.net"      port="443"/>
+            <Host name="fonts.googleapis.com"  port="443"/>
+            <Host name="fonts.gstatic.com"     port="443"/>
+          </AllowedHosts>
         </Resources>
         <Lifecycle>
           <AutoVisible>true</AutoVisible>
