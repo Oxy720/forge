@@ -86,4 +86,4 @@ For issues or feature requests:
 - MOLD: https://github.com/Oxy720/mold
 
 ---
-Built for post-production workflows.  !@#
+Built for post-production workflows.
