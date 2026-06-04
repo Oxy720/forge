@@ -7,8 +7,7 @@ A CEP panel plugin manager for Adobe Premiere Pro. Install, update, and manage p
 - **One-click installation** — Download and install plugins from the registry
 - **Plugin discovery** — Browse available plugins with detailed descriptions
 - **Update management** — Check for and install plugin updates
-- **Offline fallback** — Works with a cached plugin list if registry is unavailable
-- **Dark theme** — Optimized for post-production workflows
+- **Always-visible errors** — Any failure is shown directly in the panel, never silently hidden
 
 ## Current Plugins
 
@@ -21,7 +20,7 @@ A CEP panel plugin manager for Adobe Premiere Pro. Install, update, and manage p
 1. Download the FORGE panel files
 2. Place in your Adobe CEP extensions folder:
    ```
-   %APPDATA%\Adobe\CEP\extensions\forge\
+   %APPDATA%\Adobe\CEP\extensions\FORGE\
    ```
 3. Restart Adobe Premiere Pro
 4. Open the panel via **Window → Extensions → FORGE**
@@ -36,14 +35,26 @@ A CEP panel plugin manager for Adobe Premiere Pro. Install, update, and manage p
 
 After installing a plugin, restart Premiere Pro for the extension to load.
 
+## File Structure
+
+```
+%APPDATA%\Adobe\CEP\extensions\FORGE\
+  index.html        ← panel UI and layout
+  CSXS\
+    manifest.xml    ← CEP manifest and allowed hosts
+  js\
+    app.js          ← all logic: registry, installer, state, UI
+```
+
 ## Registry
 
-Plugin definitions are stored in the registry:
+Plugin definitions are served via jsDelivr CDN:
+
 ```
-https://raw.githubusercontent.com/Oxy720/FORGE-plugins/main/registry.json
+https://cdn.jsdelivr.net/gh/Oxy720/FORGE-plugins@main/registry.json
 ```
 
-Each plugin lives in its own GitHub repository under `Oxy720/`.
+Each plugin lives in its own GitHub repository under `Oxy720/`. File downloads also go through jsDelivr — no direct GitHub API calls are made.
 
 ## Requirements
 
@@ -54,23 +65,25 @@ Each plugin lives in its own GitHub repository under `Oxy720/`.
 ## Troubleshooting
 
 **Panel won't load?**
+- Ensure the folder is named exactly `FORGE` (case-sensitive)
 - Restart Premiere Pro
-- Check that CEP extensions folder exists
+- Verify the CEP extensions folder exists at `%APPDATA%\Adobe\CEP\extensions\`
 
 **Install fails?**
+- The error message is shown directly in the panel — read it for specifics
 - Check your internet connection
-- Verify GitHub is accessible
-- Check the browser console (F12) for error messages
+- jsDelivr (`cdn.jsdelivr.net`) must be reachable
 
 **Plugin not appearing after install?**
 - Restart Premiere Pro
-- Verify the plugin is listed in **Window → Extensions**
+- Verify the plugin folder exists under `%APPDATA%\Adobe\CEP\extensions\`
+- Check it appears in **Window → Extensions**
 
 ## Support
 
-For issues or feature requests, visit the plugin repository:
-- https://github.com/Oxy720/mold
+For issues or feature requests:
+- FORGE: https://github.com/Oxy720/FORGE-plugins
+- MOLD: https://github.com/Oxy720/mold
 
 ---
-
-Built with assistance. Themed for post-production workflows.
+Built for post-production workflows.
